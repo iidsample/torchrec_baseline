@@ -897,7 +897,7 @@ class TrainPipelineSparseDist(TrainPipeline[In, Out]):
             # Backward
             backward_start.record()
             loss_val = torch.sum(losses, dim=0)
-            logger.info("Losses = {}".format(loss_val))
+            # logger.info("Losses = {}".format(loss_val))
             loss_val.backward()
             backward_stop.record()
 

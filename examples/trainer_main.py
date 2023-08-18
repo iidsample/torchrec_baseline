@@ -1157,7 +1157,9 @@ def main(args) -> None:
 if __name__ == "__main__":
     args = parse_args(argparse.ArgumentParser(description="Arguments for DLRM"))
     now = datetime.now().strftime("%H:%M_%B_%d_%Y")
-    filename = f"training_worker_{os.environ['RANK']}_{now}_{args.logging_prefix}.log"
+    filename = (
+        f"training_worker_{os.environ['RANK']}_{now}_{args.logging_prefix}_torchrec.log"
+    )
     logging.basicConfig(filename=filename)
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
